@@ -8,6 +8,7 @@ class AppKernel extends Kernel
     public function registerBundles()
     {
         $bundles = array(
+        	// Bundles base de symfony
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
@@ -17,7 +18,11 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
-            new Weo\BancoBundle\WeoBancoBundle(),
+        	// Bundles plugin	
+        	new Symfony\Bundle\DoctrineMigrationsBundle\DoctrineMigrationsBundle(),
+        	new Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle(),
+       		// Bundles privados
+        	new Weo\BancoBundle\WeoBancoBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

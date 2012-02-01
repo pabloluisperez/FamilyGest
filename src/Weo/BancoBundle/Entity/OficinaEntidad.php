@@ -4,10 +4,10 @@ namespace Weo\BancoBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="Pablo\CarteraBundle\Repository\OficinaBancoRepository")
- * @ORM\Table(name="oficina_banco")
+ * @ORM\Entity(repositoryClass="Pablo\CarteraBundle\Repository\OficinaEntidadRepository")
+ * @ORM\Table(name="oficina_entidad")
  */
-class OficinaBanco
+class OficinaEntidad
 {
     /**
      * @ORM\Id

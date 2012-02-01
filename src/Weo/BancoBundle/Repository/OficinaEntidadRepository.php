@@ -3,7 +3,7 @@ namespace Weo\BancoBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 
-class EntidadOficinaRepository extends EntityRepository
+class OficinaEntidadRepository extends EntityRepository
 {
     public function findAllOrderedByName()
     {
