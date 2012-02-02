@@ -58,3 +58,11 @@ swiftmailer:
 jms_security_extra:
     secure_controllers:  true
     secure_all_services: false
+
+services:
+    banco.entidadbanco:
+        class:        Weo\BancoBundle\Admin\EntidadBancoAdmin
+        tags:
+          - { name: sonata.admin, manager_type: orm, group: "Contabilidad Domestica", label: "Entidad / Banco"}        
+        arguments:    [null, Weo\BancoBundle\Entity\EntidadBanco, WeoBancoBundle:EntidadBancoAdmin]  
+       

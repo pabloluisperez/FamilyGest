@@ -4,7 +4,7 @@ namespace Weo\BancoBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 /**
- * @ORM\Entity(repositoryClass="Pablo\CarteraBundle\Repository\EntidadBancoRepository")
+ * @ORM\Entity(repositoryClass="Weo\BancoBundle\Repository\EntidadBancoRepository")
  * @ORM\Table(name="entidad_banco")
  */
 class EntidadBanco

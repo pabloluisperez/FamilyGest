@@ -21,6 +21,11 @@ class AppKernel extends Kernel
         	// Bundles plugin	
         	new Symfony\Bundle\DoctrineMigrationsBundle\DoctrineMigrationsBundle(),
         	new Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle(),
+        	new Sonata\AdminBundle\SonataAdminBundle(),
+        	new Sonata\jQueryBundle\SonatajQueryBundle(),
+        	new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+        	new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+        	new SimpleThings\EntityAudit\SimpleThingsEntityAuditBundle(),        		
        		// Bundles privados
         	new Weo\BancoBundle\WeoBancoBundle(),
         );
