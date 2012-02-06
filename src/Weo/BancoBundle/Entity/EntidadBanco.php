@@ -134,4 +134,9 @@ class EntidadBanco
     {
         return $this->cuentas;
     }
+    
+    public function __toString()
+    {
+    	return $this->getCodigoEntidad() . " - ". $this->getNombre();
+    }
 }

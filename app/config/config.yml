@@ -4,7 +4,7 @@ imports:
 
 framework:
     #esi:             ~
-    #translator:      { fallback: %locale% }
+    translator:      { fallback: %locale% }
     secret:          %secret%
     charset:         UTF-8
     router:          { resource: "%kernel.root_dir%/config/routing.yml" }
@@ -55,14 +55,48 @@ swiftmailer:
     username:  %mailer_user%
     password:  %mailer_password%
 
-jms_security_extra:
-    secure_controllers:  true
-    secure_all_services: false
+
+
 
 services:
-    banco.entidadbanco:
+    weo.bancobundle.admin.tipocuenta:
+        class: Weo\BancoBundle\Admin\TipoCuentaAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Contabilidad Domestica", label: "Tipo cuenta" }
+        arguments: [null, Weo\BancoBundle\Entity\TipoCuenta, WeoBancoBundle:TipoCuentaAdmin]
+    weo.bancobundle.admin.tipoapunte:
+        class: Weo\BancoBundle\Admin\TipoApunteAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Contabilidad Domestica", label: "Tipo apunte" }
+        arguments: [null, Weo\BancoBundle\Entity\TipoApunte, WeoBancoBundle:TipoApunteAdmin]
+    weo.bancobundle.admin.entidadbanco:
         class:        Weo\BancoBundle\Admin\EntidadBancoAdmin
         tags:
           - { name: sonata.admin, manager_type: orm, group: "Contabilidad Domestica", label: "Entidad / Banco"}        
         arguments:    [null, Weo\BancoBundle\Entity\EntidadBanco, WeoBancoBundle:EntidadBancoAdmin]  
-       
+    weo.bancobundle.admin.cuenta:
+        class: Weo\BancoBundle\Admin\CuentaAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Contabilidad Domestica", label: "Cuentas" }
+        arguments: [null, Weo\BancoBundle\Entity\Cuenta, WeoBancoBundle:CuentaAdmin]
+    weo.bancobundle.admin.apunte:
+        class: Weo\BancoBundle\Admin\ApunteAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Contabilidad Domestica", label: Apunte }
+        arguments: [null, Weo\BancoBundle\Entity\Apunte, WeoBancoBundle:ApunteAdmin]
+    weo.bancobundle.admin.categoriaapunte:
+        class: Weo\BancoBundle\Admin\CategoriaApunteAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Contabilidad Domestica", label: "Categoria apunte" }
+        arguments: [null, Weo\BancoBundle\Entity\CategoriaApunte, WeoBancoBundle:CategoriaApunteAdmin]
+    weo.bancobundle.admin.oficinaentidad:
+        class: Weo\BancoBundle\Admin\OficinaEntidadAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Contabilidad Domestica", label: "Oficina" }
+        arguments: [null, Weo\BancoBundle\Entity\OficinaEntidad, WeoBancoBundle:OficinaEntidadAdmin]
+
+        
+jms_security_extra:
+    secure_controllers:  true
+    secure_all_services: false        
+        

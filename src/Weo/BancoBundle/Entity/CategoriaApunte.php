@@ -5,7 +5,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 
 /**
- * @ORM\Entity(repositoryClass="Pablo\CarteraBundle\Repository\CategoriaApunteRepository")
+ * @ORM\Entity(repositoryClass="Weo\BancoBundle\Repository\CategoriaApunteRepository")
  * @ORM\Table(name="categoria_apunte")
  */
 class CategoriaApunte
@@ -33,4 +33,54 @@ class CategoriaApunte
         $this->apuntes = new ArrayCollection();
     }
      
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nombre
+     *
+     * @param string $nombre
+     */
+    public function setNombre($nombre)
+    {
+        $this->nombre = $nombre;
+    }
+
+    /**
+     * Get nombre
+     *
+     * @return string 
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+
+    /**
+     * Add apuntes
+     *
+     * @param Weo\BancoBundle\Entity\Apunte $apuntes
+     */
+    public function addApunte(\Weo\BancoBundle\Entity\Apunte $apuntes)
+    {
+        $this->apuntes[] = $apuntes;
+    }
+
+    /**
+     * Get apuntes
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getApuntes()
+    {
+        return $this->apuntes;
+    }
 }
